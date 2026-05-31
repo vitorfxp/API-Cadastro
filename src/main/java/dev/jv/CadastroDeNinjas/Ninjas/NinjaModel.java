@@ -2,6 +2,9 @@ package dev.jv.CadastroDeNinjas.Ninjas;
 
 import dev.jv.CadastroDeNinjas.Missoes.MissaoModel;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
@@ -9,6 +12,10 @@ import java.util.List;
 // transforma uma classe em uma tabela do banco de dados
 @Entity
 @Table(name = "tb_cadastro")
+// Isso vem da dependência Lombok
+@NoArgsConstructor // Construtor sem nenhum argumento
+@AllArgsConstructor // Construtor com todos os argumentos
+@Data // Cria getters e setters
 public class NinjaModel {
 
     @Id
@@ -18,42 +25,9 @@ public class NinjaModel {
     private String email;
     private Nivel nivel;
     private int idade;
-
     // Muitos ninjas para uma missão
     @ManyToOne
     @JoinColumn(name = "missoes_id") // Chave estrangeira
     private MissaoModel missoes;
 
-    public NinjaModel(String nome, String email, int idade) {
-        this.nome = nome;
-        this.email = email;
-        this.idade = idade;
-    }
-
-    public NinjaModel() {
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
 }
