@@ -1,6 +1,9 @@
-package dev.jv.CadastroDeNinjas;
+package dev.jv.CadastroDeNinjas.Ninjas;
 
+import dev.jv.CadastroDeNinjas.Missoes.MissaoModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 
 // transforma uma classe em uma tabela do banco de dados
@@ -13,7 +16,13 @@ public class NinjaModel {
     private Long id;
     private String nome;
     private String email;
+    private Nivel nivel;
     private int idade;
+
+    // Muitos ninjas para uma missão
+    @ManyToOne
+    @JoinColumn(name = "missoes_id") // Chave estrangeira
+    private MissaoModel missoes;
 
     public NinjaModel(String nome, String email, int idade) {
         this.nome = nome;
