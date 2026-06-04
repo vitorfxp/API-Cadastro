@@ -21,6 +21,8 @@ public class MissaoModel {
     private Long id;
     private String nome;
     private String descricao;
+
+    @Enumerated(EnumType.STRING)
     private Rank rank;
     @OneToMany(mappedBy = "missoes")
     private List<NinjaModel> ninjas;

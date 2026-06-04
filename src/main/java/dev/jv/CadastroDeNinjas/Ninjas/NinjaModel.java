@@ -27,6 +27,9 @@ public class NinjaModel {
     private String email;
 
     private Nivel nivel;
+
+    @Column(name = "aldeia")
+    private String aldeia;
     
     private int idade;
     // Muitos ninjas para uma missão
