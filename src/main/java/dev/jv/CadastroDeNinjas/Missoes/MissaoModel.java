@@ -1,5 +1,6 @@
 package dev.jv.CadastroDeNinjas.Missoes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.jv.CadastroDeNinjas.Ninjas.NinjaModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -25,5 +26,6 @@ public class MissaoModel {
     @Enumerated(EnumType.STRING)
     private Rank rank;
     @OneToMany(mappedBy = "missoes")
+    @JsonIgnore
     private List<NinjaModel> ninjas;
 }

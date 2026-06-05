@@ -26,6 +26,7 @@ public class NinjaModel {
     @Column(unique = true)
     private String email;
 
+    @Enumerated(EnumType.STRING)
     private Nivel nivel;
 
     @Column(name = "aldeia")

@@ -1,14 +1,23 @@
 package dev.jv.CadastroDeNinjas.Ninjas.Controller;
 
 
+import dev.jv.CadastroDeNinjas.Ninjas.NinjaModel;
+import dev.jv.CadastroDeNinjas.Ninjas.Service.NinjaService;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 // RestController é uma anotation para indicar que essa classe é um controller
 @RestController
-@RequestMapping
+@RequestMapping("/ninja")
 public class NinjaController {
 
+    private NinjaService ninjaService;
+
+    public NinjaController(NinjaService ninjaService) {
+        this.ninjaService = ninjaService;
+    }
 
     // ROTA QUE VOCÊ NECESSITA (GET, POST, PUT, PATCH,DELETE + Mappping
     @GetMapping("/primeira")
@@ -17,31 +26,31 @@ public class NinjaController {
     }
 
     // Adicionar Ninja (CREATE)
-    @PostMapping("/ninja/adicionar")
+    @PostMapping("/adicionar")
     public String adicionarNinja() {
         return "Ninja criado!";
     }
 
     // Procurar Ninja por id (READ)
-    @GetMapping("/ninja/listarID")
+    @GetMapping("/listarID")
     public String listarPorId() {
         return "Ninja listado!";
     }
 
     // Mostrar todos os ninjas (READ)
-    @GetMapping("/ninja/listar")
-    public String listarNinjas() {
-        return "Ninja listados!";
+    @GetMapping("/listar")
+    public List<NinjaModel> listarNinjas() {
+        return ninjaService.listarNinjas();
     }
 
     // Atualizar ninja (UPDATE)
-    @PutMapping("/ninja/atualizar")
+    @PutMapping("/atualizar")
     public String atualizarNinja() {
         return "Ninja atualizado!";
     }
 
     // Deletar Ninja (DELETE)
-    @DeleteMapping("/ninja/deletar")
+    @DeleteMapping("/deletar")
     public String deletarNinja() {
         return "Ninja deletado!";
     }
