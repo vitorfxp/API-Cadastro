@@ -21,7 +21,7 @@ public class NinjaController {
 
     // ROTA QUE VOCÊ NECESSITA (GET, POST, PUT, PATCH,DELETE + Mappping
     @GetMapping("/primeira")
-    public String boasVindas(){
+    public String boasVindas() {
         return "Essa é a minha primeira rota com uma api rest";
     }
 
@@ -32,9 +32,9 @@ public class NinjaController {
     }
 
     // Procurar Ninja por id (READ)
-    @GetMapping("/listarID")
-    public String listarPorId() {
-        return "Ninja listado!";
+    @GetMapping("/listar/{id}")
+    public NinjaModel listarNinjasPorId(@PathVariable Long id) {
+        return ninjaService.listarPorId(id);
     }
 
     // Mostrar todos os ninjas (READ)
