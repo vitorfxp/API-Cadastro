@@ -1,11 +1,23 @@
 package dev.jv.CadastroDeNinjas.Missoes.Controller;
 
 
+import dev.jv.CadastroDeNinjas.Missoes.MissaoModel;
+import dev.jv.CadastroDeNinjas.Missoes.Service.MissaoService;
+import dev.jv.CadastroDeNinjas.Ninjas.NinjaModel;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/missao")
 public class MissaoController {
+
+    private MissaoService missaoService;
+
+    public MissaoController(MissaoService missaoService) {
+        this.missaoService = missaoService;
+    }
+
     // Criar Missao (CREATE)
     @PostMapping("/criar")
     public String criarMissao() {
@@ -20,8 +32,8 @@ public class MissaoController {
 
     // Mostrar todas as Missoes (READ)
     @GetMapping("/listar")
-    public String listarNinjas() {
-        return "Missoes listadas!";
+    public List<MissaoModel> listarNinjas() {
+        return missaoService.listarMissoes();
     }
 
     // Atualizar Missao (UPDATE)
