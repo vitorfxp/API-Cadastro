@@ -26,8 +26,8 @@ public class MissaoController {
 
     // Procurar Missao por id (READ)
     @GetMapping("/listarID")
-    public String listarPorId() {
-        return "Missao listada!";
+    public MissaoModel listarPorId(Long id) {
+        return missaoService.listarMissoesPorId(id);
     }
 
     // Mostrar todas as Missoes (READ)
