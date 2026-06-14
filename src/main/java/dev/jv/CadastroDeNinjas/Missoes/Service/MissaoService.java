@@ -17,10 +17,16 @@ public class MissaoService {
         this.missoesRepository = missoesRepository;
     }
 
-    public List<MissaoModel> listarMissoes() {return missoesRepository.findAll();}
+    public List<MissaoModel> listarMissoes() {
+        return missoesRepository.findAll();
+    }
 
     public MissaoModel listarMissoesPorId(Long id) {
         Optional<MissaoModel> missaoModel = missoesRepository.findById(id);
         return missaoModel.orElse(null);
+    }
+
+    public MissaoModel criarMissao(MissaoModel missao) {
+        return missoesRepository.save(missao);
     }
 }

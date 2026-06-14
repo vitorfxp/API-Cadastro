@@ -20,13 +20,13 @@ public class MissaoController {
 
     // Criar Missao (CREATE)
     @PostMapping("/criar")
-    public String criarMissao() {
-        return "Missão criada!";
+    public MissaoModel criarMissao(@RequestBody MissaoModel missaoModel) {
+        return missaoService.criarMissao(missaoModel);
     }
 
     // Procurar Missao por id (READ)
     @GetMapping("/listar/{id}")
-    public MissaoModel listarPorId(Long id) {
+    public MissaoModel listarPorId(@PathVariable Long id) {
         return missaoService.listarMissoesPorId(id);
     }
 
