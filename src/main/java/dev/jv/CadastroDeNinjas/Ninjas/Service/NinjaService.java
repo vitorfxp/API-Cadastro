@@ -30,5 +30,10 @@ public class NinjaService {
             return ninjaRepository.save(ninja);
     }
 
+    public String deletarNinja(Long id) {
+        ninjaRepository.deleteById(id);
+        return "O ninja foi deletado com sucesso";
+    }
+
 
 }
