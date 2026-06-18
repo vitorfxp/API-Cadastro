@@ -2,7 +2,6 @@ package dev.jv.CadastroDeNinjas.Ninjas.Service;
 
 import dev.jv.CadastroDeNinjas.Ninjas.NinjaModel;
 import dev.jv.CadastroDeNinjas.Ninjas.NinjaRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
