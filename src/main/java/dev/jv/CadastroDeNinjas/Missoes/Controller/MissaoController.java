@@ -1,6 +1,7 @@
 package dev.jv.CadastroDeNinjas.Missoes.Controller;
 
 
+import dev.jv.CadastroDeNinjas.Missoes.MissaoDTO;
 import dev.jv.CadastroDeNinjas.Missoes.MissaoModel;
 import dev.jv.CadastroDeNinjas.Missoes.Service.MissaoService;
 import dev.jv.CadastroDeNinjas.Ninjas.NinjaModel;
@@ -20,8 +21,8 @@ public class MissaoController {
 
     // Criar Missao (CREATE)
     @PostMapping("/criar")
-    public MissaoModel criarMissao(@RequestBody MissaoModel missaoModel) {
-        return missaoService.criarMissao(missaoModel);
+    public MissaoDTO criarMissao(@RequestBody MissaoDTO missao) {
+        return missaoService.criarMissao(missao);
     }
 
     // Procurar Missao por id (READ)
@@ -37,14 +38,14 @@ public class MissaoController {
     }
 
     // Atualizar Missao (UPDATE)
-    @PutMapping("/atualizar")
-    public String atualizarNinja() {
-        return "Missao atualizada!";
+    @PutMapping("/atualizar/{id}")
+    public MissaoModel atualizarNinja(@PathVariable Long id, @RequestBody MissaoModel missaoModel) {
+        return missaoService.atualizarMissao(id, missaoModel);
     }
 
     // Deletar Missao (DELETE)
-    @DeleteMapping("/deletar")
-    public String deletarNinja() {
-        return "Missao deletada!";
+    @DeleteMapping("/deletar/{id}")
+    public String deletarNinja(@PathVariable Long id) {
+        return missaoService.deletarMissaoPorId(id);
     }
 }

@@ -38,4 +38,7 @@ public class NinjaModel {
     @JoinColumn(name = "missoes_id") // Chave estrangeira
     private MissaoModel missoes;
 
+    @Column(name = "habilidadeEspecial")
+    private String habilidadeEspecial;
+
 }
