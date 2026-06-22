@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class NinjaDTO {
+public class  NinjaDTO {
 
     private Long id;
     private String nome;
