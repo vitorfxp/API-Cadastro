@@ -2,8 +2,9 @@ package dev.jv.CadastroDeNinjas.Ninjas.Controller;
 
 
 import dev.jv.CadastroDeNinjas.Ninjas.NinjaDTO;
-import dev.jv.CadastroDeNinjas.Ninjas.NinjaModel;
 import dev.jv.CadastroDeNinjas.Ninjas.Service.NinjaService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,8 +29,11 @@ public class NinjaController {
 
     // Adicionar Ninja (CREATE)
     @PostMapping("/adicionar")
-    public NinjaDTO adicionarNinja(@RequestBody NinjaDTO ninja) {
-        return ninjaService.criarNinja(ninja);
+    public ResponseEntity<String> adicionarNinja(@RequestBody NinjaDTO ninja) {
+
+         ninjaService.criarNinja(ninja);
+
+        return ResponseEntity.status(HttpStatus.CREATED).body("Ninja criado com sucesso!");
     }
 
     // Procurar Ninja por id (READ)
@@ -46,14 +50,24 @@ public class NinjaController {
 
     // Atualizar ninja (UPDATE)
     @PutMapping("/atualizar/{id}")
-    public NinjaDTO atualizarNinja(@PathVariable Long id,@RequestBody NinjaDTO ninja) {
-        return ninjaService.atualizarNinja(id, ninja);
+    public ResponseEntity<String> atualizarNinja(@PathVariable Long id,@RequestBody NinjaDTO ninja) {
+        if (ninjaService.listarPorId(id) != null){
+            NinjaDTO ninjaDTO = ninjaService.atualizarNinja(id, ninja);
+            return ResponseEntity.ok("Ninja: "+ ninjaDTO.getNome()+",foi atualizado com sucesso!");
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("O ninja não foi encontrado");
     }
 
     // Deletar Ninja (DELETE)
     @DeleteMapping("/deletar/{id}")
-    public String deletarNinja(@PathVariable Long id) {
-        return ninjaService.deletarNinja(id);
+    public ResponseEntity<String> deletarNinja(@PathVariable Long id) {
+
+        if (ninjaService.listarPorId(id) != null) {
+            ninjaService.deletarNinja(id);
+            return ResponseEntity.ok("Ninja foi deletado com sucesso!");
+        }
+         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("O ninja não foi encontrado");
+
     }
 
 
