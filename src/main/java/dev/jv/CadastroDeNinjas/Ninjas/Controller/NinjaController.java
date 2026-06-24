@@ -38,14 +38,20 @@ public class NinjaController {
 
     // Procurar Ninja por id (READ)
     @GetMapping("/listar/{id}")
-    public NinjaDTO listarNinjasPorId(@PathVariable Long id) {
-        return ninjaService.listarPorId(id);
+    public ResponseEntity<?> listarNinjasPorId(@PathVariable Long id) {
+         NinjaDTO ninjaId = ninjaService.listarPorId(id);
+
+         if(ninjaId != null){
+            return ResponseEntity.ok(ninjaId);
+         }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("O ninja não foi encontrado.");
     }
 
     // Mostrar todos os ninjas (READ)
     @GetMapping("/listar")
-    public List<NinjaDTO> listarNinjas() {
-        return ninjaService.listarNinjas();
+    public ResponseEntity<List<NinjaDTO>> listarNinjas() {
+        List<NinjaDTO> ninjas = ninjaService.listarNinjas();
+        return ResponseEntity.ok(ninjas);
     }
 
     // Atualizar ninja (UPDATE)
