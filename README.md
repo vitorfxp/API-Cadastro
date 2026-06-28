@@ -25,8 +25,6 @@
 - [Interface Web](#-interface-web)
 - [Banco de Dados](#-banco-de-dados)
 - [Documentação Swagger](#-documentação-swagger)
-- [Autor](#-autor)
-
 ---
 
 ## 📖 Sobre o Projeto
