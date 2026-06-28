@@ -232,7 +232,7 @@ Para acessar o console do H2:
 1. Acesse `http://localhost:8080/h2-console`
 2. Use a URL: `jdbc:h2:file:./data/CadastroDeNinjasDb`
 3. Usuário: `cadastro_bd`
-4. Senha: *(deixe em branco)*
+4. Senha: *(A sua escolha)*
 
 ### Modelo de dados
 
@@ -270,11 +270,11 @@ Pelo Swagger UI é possível visualizar todos os endpoints, seus parâmetros, ex
 
 ## 👤 Autor
 
-Feito com 💙 por **vitorfxp**
+Feito por **vitorfxp**
 
 [![GitHub](https://img.shields.io/badge/GitHub-vitorfxp-181717?style=flat-square&logo=github)](https://github.com/vitorfxp)
 [![Repositório](https://img.shields.io/badge/Repositório-API--Cadastro-blue?style=flat-square&logo=github)](https://github.com/vitorfxp/API-Cadastro)
 
 ---
 
-> *Projeto desenvolvido para fins de estudo e portfólio. Feedbacks são bem-vindos!* 🚀
+> *Projeto desenvolvido para fins de estudo e portfólio.*
