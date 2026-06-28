@@ -1,6 +1,6 @@
-# 🥷 Cadastro de Ninjas — API REST
+# Cadastro de Ninjas — API REST
 
-> Projeto de estudo e portfólio desenvolvido com **Spring Boot 3**, demonstrando na prática a construção de uma API REST completa com CRUD, padrão DTO + Mapper, interface web com Thymeleaf e documentação interativa com Swagger.
+> Projeto desenvolvido com **Spring Boot 3**, demonstrando na prática a construção de uma API REST completa com CRUD, padrão DTO + Mapper, interface web com Thymeleaf e documentação interativa com Swagger.
 
 <p align="left">
   <img src="https://img.shields.io/badge/Java-17-orange?style=flat-square&logo=java" />
@@ -29,7 +29,7 @@
 
 ## 📖 Sobre o Projeto
 
-O **Cadastro de Ninjas** é uma API REST desenvolvida para fins de estudo e composição de portfólio. O projeto aborda os principais conceitos do ecossistema Spring Boot, incluindo:
+O **Cadastro de Ninjas** é uma API REST desenvolvida para fins de aprimoração no desenvolvimento de API's utlizando Java e Spring Boot. O projeto aborda os principais conceitos do ecossistema Spring Boot, incluindo:
 
 - Construção de API REST com Spring Web
 - Padrão **DTO (Data Transfer Object)** com Mapper manual
@@ -57,7 +57,7 @@ O sistema permite gerenciar **Ninjas** e **Missões**, com relacionamento entre 
 | Thymeleaf | — | Interface web (templates HTML) |
 | Lombok | — | Redução de boilerplate |
 | SpringDoc OpenAPI | 2.8.9 | Documentação Swagger |
-| Maven | — | Gerenciador de dependências |
+| Maven | 4.0.0 | Gerenciador de dependências |
 
 ---
 
