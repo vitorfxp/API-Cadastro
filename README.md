@@ -268,13 +268,4 @@ Pelo Swagger UI é possível visualizar todos os endpoints, seus parâmetros, ex
 
 ---
 
-## 👤 Autor
-
-Feito por **vitorfxp**
-
-[![GitHub](https://img.shields.io/badge/GitHub-vitorfxp-181717?style=flat-square&logo=github)](https://github.com/vitorfxp)
-[![Repositório](https://img.shields.io/badge/Repositório-API--Cadastro-blue?style=flat-square&logo=github)](https://github.com/vitorfxp/API-Cadastro)
-
----
-
 > *Projeto desenvolvido para fins de estudo e portfólio.*
