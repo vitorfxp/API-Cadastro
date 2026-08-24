@@ -1,14 +1,27 @@
+# Spring Boot
 HELP.md
 target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-### IntelliJ IDEA ###
-.idea
+# IntelliJ IDEA
+.idea/
 *.iws
 *.iml
 *.ipr
 
-/.env
+# Logs
+*.log
+logs/
+
+# Variáveis de ambiente / secrets
+.env
+.env.*
+*.env
+
+# Sistema operacional
+Thumbs.db
+
+# Dados locais
 data/
